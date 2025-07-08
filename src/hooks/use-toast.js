@@ -1,7 +1,8 @@
 import React from 'react';
 
 const TOAST_LIMIT = 1;
-const TOAST_REMOVE_DELAY = 1000000;
+const TOAST_REMOVE_DELAY = 1000; // 1秒後に削除
+const TOAST_AUTO_DISMISS_DELAY = 5000; // 5秒後に自動消去
 
 const actionTypes = {
   ADD_TOAST: 'ADD_TOAST',
@@ -119,6 +120,11 @@ function toast({ ...props }) {
       },
     },
   });
+
+  // 5秒後に自動で消去
+  setTimeout(() => {
+    dismiss();
+  }, TOAST_AUTO_DISMISS_DELAY);
 
   return {
     id: id,
