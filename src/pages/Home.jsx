@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
+import { Link } from 'wouter';
 import { Button } from '../components/ui/button.jsx';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card.jsx';
 import { Input } from '../components/ui/input.jsx';
@@ -248,13 +249,15 @@ const Home = () => {
               >
                 今すぐ始める
               </Button>
-              <Button 
-                variant="secondary" 
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                詳しく見る
-              </Button>
+              <Link to="/help">
+                <Button 
+                  variant="secondary" 
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  詳しく見る
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

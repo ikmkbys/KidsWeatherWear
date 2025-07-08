@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, Switch } from 'wouter';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Home from './pages/Home.jsx';
+import Help from './pages/Help.jsx';
 import NotFound from './pages/NotFound.jsx';
 import { Toaster } from './components/ui/toaster.jsx';
 import './index.css';
@@ -22,6 +23,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" component={Home} />
+            <Route path="/help" component={Help} />
             <Route component={NotFound} />
           </Switch>
         </Router>
