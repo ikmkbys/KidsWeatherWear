@@ -376,8 +376,8 @@ const Home = () => {
           <section id="recommendations" className="scroll-mt-16 mb-8">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">服装提案</h2>
-                <div className="flex items-center justify-center space-x-4 text-sm text-gray-600">
+                <h2 className="text-2xl font-bold text-white mb-2">服装提案</h2>
+                <div className="flex items-center justify-center space-x-4 text-sm text-white/80">
                   <div className="flex items-center space-x-1">
                     {getWeatherIcon(recommendations.weatherInput.condition)}
                     <span>{getWeatherLabel(recommendations.weatherInput.condition)}</span>
@@ -407,9 +407,9 @@ const Home = () => {
                               {item.category === 'tops' ? 'トップス' : item.category === 'bottoms' ? 'ボトムス' : item.category === 'shoes' ? '靴' : item.category === 'accessories' ? '小物' : '防寒具'}
                             </Badge>
                           </div>
-                          <h3 className="font-semibold text-sm mb-1">{item.item}</h3>
-                          <p className="text-xs text-gray-600 mb-2">{item.description}</p>
-                          <p className="text-xs text-blue-600 font-medium">{item.reason}</p>
+                          <h3 className="font-semibold text-sm mb-1 text-white">{item.item}</h3>
+                          <p className="text-xs text-white/70 mb-2">{item.description}</p>
+                          <p className="text-xs text-emerald-300 font-medium">{item.reason}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -425,8 +425,8 @@ const Home = () => {
           <section id="playgrounds" className="scroll-mt-16 mb-8">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">おすすめ遊び場</h2>
-                <p className="text-gray-600">天気と年齢に適した遊び場を提案します</p>
+                <h2 className="text-2xl font-bold text-white mb-2">おすすめ遊び場</h2>
+                <p className="text-white/80">天気と年齢に適した遊び場を提案します</p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -456,12 +456,12 @@ const Home = () => {
                                playground.cost === 'medium' ? '中価格' : '高価格'}
                             </Badge>
                           </div>
-                          <h3 className="font-semibold text-sm mb-1">{playground.name}</h3>
-                          <p className="text-xs text-gray-600 mb-2">{playground.description}</p>
+                          <h3 className="font-semibold text-sm mb-1 text-white">{playground.name}</h3>
+                          <p className="text-xs text-white/70 mb-2">{playground.description}</p>
                           <div className="flex items-center space-x-2 mb-2">
-                            <span className="text-xs text-blue-600">⏱️ {playground.estimatedDuration}</span>
+                            <span className="text-xs text-emerald-300">⏱️ {playground.estimatedDuration}</span>
                             {playground.weatherScore && (
-                              <span className="text-xs text-green-600">
+                              <span className="text-xs text-emerald-300">
                                 ⭐ {playground.weatherScore}/10
                               </span>
                             )}
@@ -478,7 +478,7 @@ const Home = () => {
                               href={playground.googleMapsUrl} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="text-xs text-blue-600 hover:text-blue-800 flex items-center space-x-1"
+                              className="text-xs text-emerald-300 hover:text-emerald-200 flex items-center space-x-1"
                             >
                               <MapPin className="w-3 h-3" />
                               <span>Google Mapsで見る</span>
