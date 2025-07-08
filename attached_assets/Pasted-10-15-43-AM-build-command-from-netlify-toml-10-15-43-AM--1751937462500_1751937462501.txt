@@ -1,0 +1,57 @@
+10:15:43 AM: build.command from netlify.toml                               
+10:15:43 AM: ────────────────────────────────────────────────────────────────
+10:15:43 AM: ​
+10:15:43 AM: $ npm run build
+10:15:43 AM: > rest-express@1.0.0 build
+10:15:43 AM: > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+10:15:43 AM: vite v5.4.19 building for production...
+10:15:43 AM: transforming...
+10:15:43 AM: ✓ 3 modules transformed.
+10:15:43 AM: x Build failed in 219ms
+10:15:43 AM: error during build:
+10:15:43 AM: src/index.js (7:12): Expression expected
+10:15:43 AM: file: /opt/build/repo/src/index.js:7:12
+10:15:43 AM: 
+10:15:43 AM: 5: const container = document.getElementById('root');
+10:15:43 AM: 6: const root = createRoot(container);
+10:15:43 AM: 7: root.render(<App />);
+10:15:43 AM:                ^
+10:15:43 AM: 
+10:15:43 AM:     at getRollupError (file:///opt/build/repo/node_modules/rollup/dist/es/shared/parseAst.js:396:41)
+10:15:43 AM:     at ParseError.initialise (file:///opt/build/repo/node_modules/rollup/dist/es/shared/node-entry.js:13281:28)
+10:15:43 AM:     at convertNode (file:///opt/build/repo/node_modules/rollup/dist/es/shared/node-entry.js:14992:10)
+10:15:43 AM:     at convertProgram (file:///opt/build/repo/node_modules/rollup/dist/es/shared/node-entry.js:14235:12)
+10:15:43 AM:     at Module.setSource (file:///opt/build/repo/node_modules/rollup/dist/es/shared/node-entry.js:15978:24)
+10:15:43 AM:     at async ModuleLoader.addModuleSource (file:///opt/build/repo/node_modules/rollup/dist/es/shared/node-entry.js:19856:13)
+10:15:43 AM: ​
+10:15:43 AM: "build.command" failed                                        
+10:15:43 AM: ────────────────────────────────────────────────────────────────
+10:15:43 AM: ​
+10:15:43 AM:   Error message
+10:15:43 AM:   Command failed with exit code 1: npm run build (https://ntl.fyi/exit-code-1)
+10:15:43 AM: ​
+10:15:43 AM:   Error location
+10:15:43 AM:   In build.command from netlify.toml:
+10:15:43 AM:   npm run build
+10:15:43 AM: ​
+10:15:43 AM:   Resolved config
+10:15:43 AM:   build:
+10:15:43 AM:     command: npm run build
+10:15:43 AM:     commandOrigin: config
+10:15:43 AM:     environment:
+10:15:43 AM:       - NODE_VERSION
+10:15:43 AM:     publish: /opt/build/repo/dist
+10:15:43 AM:     publishOrigin: config
+10:15:43 AM:   functionsDirectory: /opt/build/repo/netlify/functions
+10:15:43 AM:   redirects:
+10:15:44 AM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+10:15:44 AM:     - from: /api/*
+      status: 200
+      to: /.netlify/functions/:splat
+    - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+10:15:44 AM: Build failed due to a user error: Build script returned non-zero exit code: 2
+10:15:44 AM: Failing build: Failed to build site
+10:15:44 AM: Finished processing build request in 18.673s
