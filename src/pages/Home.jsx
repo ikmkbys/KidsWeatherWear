@@ -508,9 +508,8 @@ const Home = () => {
             </div>
             <p className="text-gray-400 text-sm mb-4">天気に合わせた子供の服装と遊び場を提案するアプリ</p>
             <div className="flex justify-center space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors">プライバシーポリシー</a>
-              <a href="#" className="hover:text-white transition-colors">利用規約</a>
-              <a href="#" className="hover:text-white transition-colors">お問い合わせ</a>
+              <Link to="/privacy" className="hover:text-white transition-colors">プライバシーポリシー</Link>
+              <Link to="/help" className="hover:text-white transition-colors">使い方ガイド</Link>
             </div>
             <p className="text-xs text-gray-500 mt-4">© 2024 おでよみ. All rights reserved.</p>
           </div>
@@ -526,6 +525,8 @@ const Home = () => {
           <ChevronUp className="w-5 h-5" />
         </button>
       )}
+
+
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Router, Route, Switch } from 'wouter';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Home from './pages/Home.jsx';
 import Help from './pages/Help.jsx';
+import Privacy from './pages/Privacy.jsx';
 import NotFound from './pages/NotFound.jsx';
 import { Toaster } from './components/ui/toaster.jsx';
 import './index.css';
@@ -24,6 +25,7 @@ function App() {
           <Switch>
             <Route path="/" component={Home} />
             <Route path="/help" component={Help} />
+            <Route path="/privacy" component={Privacy} />
             <Route component={NotFound} />
           </Switch>
         </Router>
