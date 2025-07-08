@@ -183,41 +183,43 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen gradient-mesh relative">
       {/* 固定ナビゲーション */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-b border-gray-200 z-40 shadow-sm">
-        <div className="container mx-auto px-4 py-2">
+      <nav className="fixed top-0 left-0 right-0 glass z-50 shadow-2xl">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-1">
-              <Baby className="w-5 h-5 text-primary" />
-              <span className="font-medium text-sm">おでよみ</span>
+            <div className="flex items-center space-x-4">
+              <div className="p-2 rounded-xl bg-emerald-500/20 backdrop-blur-sm">
+                <Baby className="w-6 h-6 text-emerald-300" />
+              </div>
+              <span className="font-bold text-xl text-white">おでよみ</span>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-2">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => scrollToSection('weather-input')}
-                className="text-xs"
+                className="text-white/80 hover:text-white hover:bg-white/10"
               >
-                <Navigation className="w-3 h-3 mr-1" />
+                <Navigation className="w-4 h-4 mr-2" />
                 天気入力
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => scrollToSection('recommendations')}
-                className="text-xs"
+                className="text-white/80 hover:text-white hover:bg-white/10"
               >
-                <Shirt className="w-3 h-3 mr-1" />
+                <Shirt className="w-4 h-4 mr-2" />
                 服装提案
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => scrollToSection('playgrounds')}
-                className="text-xs"
+                className="text-white/80 hover:text-white hover:bg-white/10"
               >
-                <MapPinned className="w-3 h-3 mr-1" />
+                <MapPinned className="w-4 h-4 mr-2" />
                 遊び場
               </Button>
             </div>
@@ -225,36 +227,64 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* Header */}
-      <header className="bg-primary text-white shadow-lg mt-12">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-center">
-            <Baby className="w-8 h-8 mr-3" />
-            <h1 className="text-2xl font-medium">おでよみ</h1>
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-20 overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+          <div className="animate-fade-in">
+            <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-white/10 backdrop-blur-sm mb-8">
+              <Baby className="w-16 h-16 text-emerald-300" />
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              おでよみ
+            </h1>
+            <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+              AIが天気を分析して、お子様にぴったりの服装と遊び場を提案します
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                onClick={() => scrollToSection('weather-input')}
+                className="text-lg px-8 py-4"
+              >
+                今すぐ始める
+              </Button>
+              <Button 
+                variant="secondary" 
+                size="lg"
+                className="text-lg px-8 py-4"
+              >
+                詳しく見る
+              </Button>
+            </div>
           </div>
-          <p className="text-center mt-2 text-blue-100">天気に合わせた子供の服装と遊び場を提案します</p>
         </div>
-      </header>
+      </section>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-6 py-12">
         {/* 天気入力セクション */}
-        <section id="weather-input" className="scroll-mt-16 mb-8">
-          <Card className="max-w-2xl mx-auto">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Sun className="w-5 h-5" />
-                <span>天気情報入力</span>
+        <section id="weather-input" className="scroll-mt-28 mb-20">
+          <div className="text-center mb-12 animate-slide-up">
+            <h2 className="text-4xl font-bold text-white mb-4">天気情報を入力</h2>
+            <p className="text-white/70 text-lg">現在の状況を教えてください</p>
+          </div>
+          <Card className="max-w-4xl mx-auto p-8">
+            <CardHeader className="text-center pb-8">
+              <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-emerald-500/20 mb-6">
+                <Sun className="w-8 h-8 text-emerald-300" />
+              </div>
+              <CardTitle className="text-2xl text-white mb-2">
+                気象条件設定
               </CardTitle>
-              <CardDescription>
-                現在の天気情報を入力してください
+              <CardDescription className="text-white/70 text-lg">
+                正確な提案のために詳細をお聞かせください
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="temperature">気温 (°C)</Label>
+            <CardContent className="pt-8">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <Label htmlFor="temperature" className="text-white/90 font-semibold text-base">気温 (°C)</Label>
                     <Input
                       id="temperature"
                       type="number"
@@ -263,10 +293,12 @@ const Home = () => {
                       min="-20"
                       max="50"
                       required
+                      className="text-lg"
+                      placeholder="例：25"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="humidity">湿度 (%)</Label>
+                  <div className="space-y-4">
+                    <Label htmlFor="humidity" className="text-white/90 font-semibold text-base">湿度 (%)</Label>
                     <Input
                       id="humidity"
                       type="number"
@@ -275,16 +307,18 @@ const Home = () => {
                       min="0"
                       max="100"
                       required
+                      className="text-lg"
+                      placeholder="例：60"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="condition">天気</Label>
+                  <div className="space-y-4">
+                    <Label htmlFor="condition" className="text-white/90 font-semibold text-base">天気</Label>
                     <Select 
                       value={weatherInput.condition} 
                       onValueChange={(value) => setWeatherInput(prev => ({ ...prev, condition: value }))}
                     >
-                      <SelectTrigger>
-                        <SelectValue />
+                      <SelectTrigger className="text-lg">
+                        <SelectValue placeholder="天気を選択" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="sunny">☀️ 晴れ</SelectItem>
@@ -294,14 +328,14 @@ const Home = () => {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="ageGroup">年齢層</Label>
+                  <div className="space-y-4">
+                    <Label htmlFor="ageGroup" className="text-white/90 font-semibold text-base">年齢層</Label>
                     <Select 
                       value={weatherInput.ageGroup} 
                       onValueChange={(value) => setWeatherInput(prev => ({ ...prev, ageGroup: value }))}
                     >
-                      <SelectTrigger>
-                        <SelectValue />
+                      <SelectTrigger className="text-lg">
+                        <SelectValue placeholder="年齢を選択" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="toddler">👶 幼児 (1-3歳)</SelectItem>
@@ -312,23 +346,24 @@ const Home = () => {
                   </div>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-2">
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button 
                     type="button" 
                     variant="outline" 
                     onClick={() => getCurrentWeatherMutation.mutate()}
                     disabled={getCurrentWeatherMutation.isPending}
-                    className="flex-1"
+                    className="flex-1 h-14 text-lg"
                   >
-                    <MapPin className="w-4 h-4 mr-2" />
+                    <MapPin className="w-5 h-5 mr-3" />
                     {getCurrentWeatherMutation.isPending ? '取得中...' : '現在地の天気'}
                   </Button>
                   <Button 
                     type="submit" 
                     disabled={getRecommendationsMutation.isPending}
-                    className="flex-1"
+                    className="flex-1 h-14 text-lg"
                   >
-                    {getRecommendationsMutation.isPending ? '提案中...' : '服装・遊び場を提案する'}
+                    <Shirt className="w-5 h-5 mr-3" />
+                    {getRecommendationsMutation.isPending ? 'AI分析中...' : '服装・遊び場を提案する'}
                   </Button>
                 </div>
               </form>

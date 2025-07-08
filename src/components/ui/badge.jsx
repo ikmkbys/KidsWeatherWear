@@ -2,10 +2,10 @@ import React from 'react';
 import { cn } from '../../lib/utils.js';
 
 const badgeVariants = {
-  default: 'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
-  secondary: 'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
-  destructive: 'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
-  outline: 'text-foreground',
+  default: 'border-transparent bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 backdrop-blur-sm',
+  secondary: 'border-transparent bg-white/10 text-white/80 hover:bg-white/20 backdrop-blur-sm',
+  destructive: 'border-transparent bg-red-500/20 text-red-300 hover:bg-red-500/30 backdrop-blur-sm',
+  outline: 'border-white/30 bg-transparent text-white/70 hover:bg-white/10 backdrop-blur-sm',
 };
 
 function Badge({ className, variant = 'default', ...props }) {

@@ -17,7 +17,7 @@ const Select = ({ children, value, onValueChange }) => {
 const SelectTrigger = React.forwardRef(({ className, children, value, onValueChange, ...props }, ref) => (
   <select
     className={cn(
-      'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+      'flex h-12 w-full items-center justify-between rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-3 text-white focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300',
       className
     )}
     ref={ref}

@@ -2,12 +2,12 @@ import React from 'react';
 import { cn } from '../../lib/utils.js';
 
 const buttonVariants = {
-  default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-  destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-  outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-  secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-  ghost: 'hover:bg-accent hover:text-accent-foreground',
-  link: 'text-primary underline-offset-4 hover:underline',
+  default: 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-xl border-0 transform hover:scale-105',
+  destructive: 'bg-gradient-to-r from-red-500 to-pink-600 text-white hover:from-red-600 hover:to-pink-700 shadow-lg hover:shadow-xl border-0 transform hover:scale-105',
+  outline: 'border-2 border-emerald-500/50 bg-transparent text-emerald-400 hover:bg-emerald-500/10 backdrop-blur-sm',
+  secondary: 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl',
+  ghost: 'bg-transparent hover:bg-white/10 text-white/80 hover:text-white backdrop-blur-sm',
+  link: 'text-emerald-400 underline-offset-4 hover:underline bg-transparent hover:text-emerald-300',
 };
 
 const buttonSizes = {
@@ -22,7 +22,7 @@ const Button = React.forwardRef(({ className, variant = 'default', size = 'defau
   return (
     <Comp
       className={cn(
-        'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+        'inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
         buttonVariants[variant],
         buttonSizes[size],
         className
